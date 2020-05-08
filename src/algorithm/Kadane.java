@@ -8,11 +8,23 @@ public class Kadane {
         System.out.println ("Enter size of array");
         int size=sc.nextInt();
         int[] arr=new int[size];
+
         for(int i=0;i<size;i++){
             arr[i]=sc.nextInt ();
         }
-        int max=arr[0];
+
+        int max_subarray=arr[0];
         int sum=0;
 
+        for(int i=0;i<size;i++){
+            sum=sum+arr[i];
+            if(max_subarray<sum){
+                max_subarray=sum;
+            }
+            else if(sum<0){
+                sum=0;
+            }
+        }
+        System.out.println (max_subarray);
     }
 }
