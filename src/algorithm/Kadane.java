@@ -13,18 +13,18 @@ public class Kadane {
             arr[i]=sc.nextInt ();
         }
 
-        int max_subarray=arr[0];
+        int max_subarray_size=arr[0];
         int sum=0;
 
         for(int i=0;i<size;i++){
             sum=sum+arr[i];
-            if(max_subarray<sum){
-                max_subarray=sum;
+            if(max_subarray_size<sum){
+                max_subarray_size=sum;
             }
             else if(sum<0){
                 sum=0;
             }
         }
-        System.out.println (max_subarray);
+        System.out.println (max_subarray_size);
     }
 }
